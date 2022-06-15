@@ -35,13 +35,12 @@ Contents can't have multiple lines.
 Example:
 ```conf
 [slave_file_1]
-file=/home/zerokun265/Desktop/test.txt
-contents=This is a line, it could be anything!!
-   I indented here but i actually just went on a second line
-       Now i'm on a third libe but not indented
-    Indentation doesnt't count, and neither do spaces
- NOTE: make sure "files" in the DEFAULT section is set to the number of files to modify
+file=path/to/text/file/to/modify
+contents=Example Text
+    Even with tabs or spaces the contents will be on the same line for now
 ```
+###### NOTE: make sure "files" in the DEFAULT section is set to the number of files to modify
+
 #### Host Mode
 The Host mode instead uses *curl* to get the current ip, writes the *ip.txt* file and pushes the gist
 
@@ -65,6 +64,7 @@ Inside my laptop i just setup `slave_run_once = true`(default value) and added i
 #### TO-DO:
 - Add compatibility with also Windows and other OSes
 - Remove need for GNU screen (with threading and deamons maybe)
+- Add multiline support
 
 #### Dependencies:
 
@@ -73,3 +73,4 @@ Dependency | Proprety
 OS | Linux / MacOS
 GNU Screen | Any Version
 Git | Any Version
+curl | Any Version
